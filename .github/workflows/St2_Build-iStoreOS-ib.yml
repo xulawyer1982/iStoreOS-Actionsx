@@ -6,7 +6,7 @@ on:
       openwrt_board:
         description: "1、请选择设备型号"
         required: true
-        default: "s905d_s905x3_s912_s922x-ct2000"
+        default: "panther-x2"
         type: choice
         options:
           - a311d-oes_s922x-oes-plus_wxy-oect
@@ -212,10 +212,10 @@ on:
       openwrt_kernel:
         description: "2、请选择内核版本"
         required: true
-        default: "6.6.y"
+        default: "6.1.141"
         type: choice
         options:
-          - 6.6.y
+          - 6.1.141
           - 6.12.y
           - 6.18.y
       auto_kernel:
@@ -240,7 +240,7 @@ on:
           - dhcp
 
 env:
-  VERSION: 24.10.6
+  VERSION: 24.10.7
 
 jobs:
   build:
@@ -268,7 +268,7 @@ jobs:
           echo "file=$ROOTFS_FILE" >> $GITHUB_OUTPUT
 
       - name: 🧱 打包iStoreOS固件
-        uses: ophub/amlogic-s9xxx-openwrt@main
+        uses: xulawyer1982/amlogic-s9xxx-openwrt@main
         with:
           openwrt_path: ${{ steps.find_rootfs.outputs.file }}
           openwrt_board: ${{ inputs.openwrt_board }}
@@ -276,7 +276,8 @@ jobs:
           auto_kernel: ${{ inputs.auto_kernel }}
           kernel_repo: ophub/kernel
           kernel_usage: stable
-          builder_name: kwonelee
+          openwrt_size: 300/2048
+          builder_name: xulawyer
 
       - name: 📜 调整.img.gz 文件名
         id: rename
