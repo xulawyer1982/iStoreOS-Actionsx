@@ -212,10 +212,10 @@ on:
       openwrt_kernel:
         description: "2、请选择内核版本"
         required: true
-        default: "6.1.141"
+        default: "6.6.141"
         type: choice
         options:
-          - 6.1.141
+          - 6.6.141
           - 6.12.y
           - 6.18.y
       auto_kernel:
