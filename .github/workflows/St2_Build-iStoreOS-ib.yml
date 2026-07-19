@@ -276,7 +276,7 @@ jobs:
           auto_kernel: ${{ inputs.auto_kernel }}
           kernel_repo: ophub/kernel
           kernel_usage: stable
-          openwrt_size: 308/2048
+          openwrt_size: 308/1026
           builder_name: xulawyer
 
       - name: 📜 调整.img.gz 文件名
