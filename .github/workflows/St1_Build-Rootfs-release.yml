@@ -5,13 +5,10 @@ on:
       build_version:
         description: "1、请选择构建版本"
         required: true
-        default: '20260703'
+        default: '20260731'
         type: choice
         options:
-          - '20260703'
-          - '20260605'
-          - '20260320'
-          - '20251231'
+          - '20260731'
       network_settings:
         description: "2、请选择初始网络配置"
         required: true
@@ -30,7 +27,7 @@ on:
         default: '192.168.1.1'
 
 env:
-  VERSION: 24.10.7
+  VERSION: 24.10.8
 
 jobs:
   build:
