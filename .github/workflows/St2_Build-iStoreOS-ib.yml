@@ -212,10 +212,10 @@ on:
       openwrt_kernel:
         description: "2、请选择内核版本"
         required: true
-        default: "6.6.141"
+        default: "6.6.144"
         type: choice
         options:
-          - 6.6.141
+          - 6.6.144
           - 6.12.y
           - 6.18.y
       auto_kernel:
@@ -240,7 +240,7 @@ on:
           - dhcp
 
 env:
-  VERSION: 24.10.7
+  VERSION: 24.10.8
 
 jobs:
   build:
