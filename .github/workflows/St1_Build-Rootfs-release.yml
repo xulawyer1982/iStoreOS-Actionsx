@@ -68,7 +68,7 @@ jobs:
 
     - name: ⏬ 下载 ImageBuilder
       run: |
-        curl -L -o imagebuilder.tar.zst https://github.com/xulawyer1982/iStoreOS-Actionsx/releases/download/iStoreOS-ImageBuilder/${{ inputs.build_version }}-istoreos-imagebuilder-rockchip-armv8.Linux-x86_64.tar.zst
+        curl -L -o imagebuilder.tar.zst https://github.com/xulawyer1982/iStoreOS-Actionsx/releases/download/iStoreOS-ImageBuilder/${{ inputs.build_version }}-istoreos-imagebuilder-armsr-armv8.Linux-x86_64.tar.zst
         tar --use-compress-program=unzstd -xvf imagebuilder.tar.zst
         mv istoreos-imagebuilder-* imagebuilder
 
@@ -103,10 +103,9 @@ jobs:
         echo "打印repositories"
         cat repositories.conf
         echo "打印Makefile"
-        make info
         cat Makefile |grep here
         bash ./build24.sh
-
+        
     - name: 📦 打印产出rootfs
       run: |
         echo "打印bin目录"
