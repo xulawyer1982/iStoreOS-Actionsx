@@ -103,6 +103,7 @@ jobs:
         echo "打印repositories"
         cat repositories.conf
         echo "打印Makefile"
+        make info
         cat Makefile |grep here
         bash ./build24.sh
 
